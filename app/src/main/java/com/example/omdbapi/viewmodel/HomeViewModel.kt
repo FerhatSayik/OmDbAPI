@@ -16,7 +16,9 @@ import retrofit2.Response
 class HomeViewModel():ViewModel() {
 
     private var searchLiveData = MutableLiveData<List<Search>>()
-    var RESPONSE =" "
+    companion object{
+        var RESPONSE ="com.example.omdbapi.viewmodel.viewmodel"
+    }
 
 
     fun getSearh(s:String){
@@ -25,7 +27,7 @@ class HomeViewModel():ViewModel() {
                 if (response.body()!!.Response!="False"){
                     searchLiveData.value = response.body()!!.Search
                 }else{
-                    RESPONSE="False"
+                    HomeViewModel.RESPONSE="False"
                     return
                 }
             }

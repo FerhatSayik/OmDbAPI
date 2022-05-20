@@ -34,9 +34,6 @@ public final class ActivityMovieBinding implements ViewBinding {
   public final ImageView imgMovie;
 
   @NonNull
-  public final ImageView imgYoutube;
-
-  @NonNull
   public final LinearLayout linearLayout;
 
   @NonNull
@@ -56,15 +53,13 @@ public final class ActivityMovieBinding implements ViewBinding {
 
   private ActivityMovieBinding(@NonNull CoordinatorLayout rootView, @NonNull AppBarLayout appbar,
       @NonNull CollapsingToolbarLayout collesingToolbar, @NonNull ImageView imgMovie,
-      @NonNull ImageView imgYoutube, @NonNull LinearLayout linearLayout,
-      @NonNull LinearProgressIndicator pragressBar, @NonNull TextView tvCategory,
-      @NonNull TextView tvInstructions, @NonNull TextView tvInstructionsStep,
-      @NonNull TextView tvReleased) {
+      @NonNull LinearLayout linearLayout, @NonNull LinearProgressIndicator pragressBar,
+      @NonNull TextView tvCategory, @NonNull TextView tvInstructions,
+      @NonNull TextView tvInstructionsStep, @NonNull TextView tvReleased) {
     this.rootView = rootView;
     this.appbar = appbar;
     this.collesingToolbar = collesingToolbar;
     this.imgMovie = imgMovie;
-    this.imgYoutube = imgYoutube;
     this.linearLayout = linearLayout;
     this.pragressBar = pragressBar;
     this.tvCategory = tvCategory;
@@ -118,12 +113,6 @@ public final class ActivityMovieBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.img_youtube;
-      ImageView imgYoutube = ViewBindings.findChildViewById(rootView, id);
-      if (imgYoutube == null) {
-        break missingId;
-      }
-
       id = R.id.linear_layout;
       LinearLayout linearLayout = ViewBindings.findChildViewById(rootView, id);
       if (linearLayout == null) {
@@ -161,8 +150,8 @@ public final class ActivityMovieBinding implements ViewBinding {
       }
 
       return new ActivityMovieBinding((CoordinatorLayout) rootView, appbar, collesingToolbar,
-          imgMovie, imgYoutube, linearLayout, pragressBar, tvCategory, tvInstructions,
-          tvInstructionsStep, tvReleased);
+          imgMovie, linearLayout, pragressBar, tvCategory, tvInstructions, tvInstructionsStep,
+          tvReleased);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

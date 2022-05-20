@@ -15,7 +15,6 @@ id btn_search
 id collesing_toolbar
 id img_movie
 id img_search
-id img_youtube
 id linear_layout
 id ly_search
 id pragress_bar

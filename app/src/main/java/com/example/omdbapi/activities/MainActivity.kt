@@ -6,6 +6,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -36,6 +38,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val builder = AlertDialog.Builder(this)
+
         homeMvvm =  ViewModelProviders.of(this)[HomeViewModel::class.java]
         searchAdapter = SearchAdapter()
 
@@ -48,7 +52,20 @@ class MainActivity : AppCompatActivity() {
         binding.btnSearch.setOnClickListener {
             progress.show()
             homeMvvm.getSearh(edtText.text.toString())
-            observerSearchLiveData()
+            if (HomeViewModel.RESPONSE == "False"){
+
+                builder.setTitle("Warning!")
+                builder.setMessage("Movie Not Found")
+                builder.setNeutralButton("Cancel"){dialogInterface , which ->
+
+                }
+                val alertDialog: AlertDialog = builder.create()
+                alertDialog.setCancelable(false)
+                alertDialog.show()
+            }else{
+                observerSearchLiveData()
+            }
+
             hideSoftKeyboard(this)
             progress.dismiss()
         }

@@ -2785,7 +2785,6 @@ id ignoreRequest
 id image
 id img_movie
 id img_search
-id img_youtube
 id immediateStop
 id included
 id info

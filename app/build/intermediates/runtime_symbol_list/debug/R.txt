@@ -2784,7 +2784,6 @@ int id ignoreRequest 0x7f0800e4
 int id image 0x7f0800e5
 int id img_movie 0x7f080204
 int id img_search 0x7f0801f2
-int id img_youtube 0x7f0801fc
 int id immediateStop 0x7f0800e6
 int id included 0x7f0800e7
 int id info 0x7f0800e8
