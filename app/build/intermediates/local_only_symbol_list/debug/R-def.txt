@@ -1,0 +1,36 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color purple_200
+color purple_500
+color purple_700
+color teal_200
+color teal_700
+color white
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+drawable ic_search
+id appbar
+id btn_search
+id collesing_toolbar
+id img_movie
+id img_search
+id img_youtube
+id linear_layout
+id ly_search
+id pragress_bar
+id rec_search_list
+id tv_category
+id tv_instructions
+id tv_instructions_step
+id tv_movie_name
+id tv_movie_year
+id tv_released
+id tv_serach
+layout activity_main
+layout activity_movie
+layout search_item
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style Theme.OMDbAPI
